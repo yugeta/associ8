@@ -1,0 +1,277 @@
+
+.elements-appear{
+  opacity:0;
+}
+.elements-appear[data-view="1"]{
+  opacity:1;
+}
+.text-appear{
+  opacity:0;
+}
+.text-appear[data-view="1"]{
+  opacity:1;
+}
+
+.text-appear,
+.text-appear .text-appear-word{
+  word-break:break-all;
+}
+.text-appear .text-appear-word{
+  display:inline-block;
+  opacity:0;
+}
+.elements-appear > *{
+  opacity:0;
+}
+
+.elements-appear[data-anim="1"] > *,
+.text-appear[data-anim="1"] .text-appear-word{
+  animation-name : anim-text-appear;
+  animation-timing-function : ease;
+  animation-fill-mode:forwards;
+}
+.elements-appear[data-anim="1"][data-appear-motion="over-bounce"] > *,
+.text-appear[data-anim="1"][data-appear-motion="over-bounce"] .text-appear-word{
+  animation-name : anim-text-appear-over;
+}
+.elements-appear[data-anim="1"][data-appear-motion="small-bounce"] > *,
+.text-appear[data-anim="1"][data-appear-motion="small-bounce"] .text-appear-word{
+  animation-name : anim-text-appear-small;
+}
+.elements-appear[data-anim="1"][data-appear-motion="linear"] > *,
+.text-appear[data-anim="1"][data-appear-motion="linear"] .text-appear-word{
+  animation-name : anim-text-appear-linear;
+}
+
+
+@keyframes anim-text-appear{
+  70%{
+    transform:translateY(-8px);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+@keyframes anim-text-appear-small{
+  70%{
+    transform:translateY(-3px);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+@keyframes anim-text-appear-over{
+  70%{
+    transform:translateY(-20px);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+@keyframes anim-text-appear-linear{
+  100% {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* << slide-appear */
+.slide-appear{
+  transition-property : none;
+}
+.slide-appear[data-anim="1"]{
+  transition-property : transform , opacity;
+  transform:translate(0,0)!important;
+  opacity:1.0!important;
+}
+.slide-appear[data-appear-fade="1"]{
+  opacity:0.0;
+}
+
+/* slide-appear >> */
+
+
+
+/* << fixed-appear*/
+.fixed-appear{
+  transition-property : opacity;
+  /* transition-duration : 0ms; */
+  opacity:0.0;
+}
+.fixed-appear[data-anim="1"]{
+  transition-property : opacity;
+  opacity:1.0!important;
+}
+
+/* fixed-appear >> */
+
+
+
+
+/* << underline */
+:root{
+  --color-carousel-bg:white;
+}
+.underline-appear{
+  /* --apeer-underline-color:blue; */
+  --appear-underline-duration : 1000ms;
+  background-image: -moz-linear-gradient(top, var(--apeer-underline-color) 0%, var(--apeer-underline-color) 100%);
+  background-image: -webkit-linear-gradient(top, var(--apeer-underline-color) 0%,var(--apeer-underline-color) 100%);
+  background-image: linear-gradient(to bottom, var(--apeer-underline-color) 0%,var(--apeer-underline-color) 100%);
+  background-position: 0px calc(100%);
+  background-size: 0px 5px;
+  background-repeat: no-repeat;
+  -webkit-transition: var(--appear-underline-duration) ease;
+  -ms-transition: var(--appear-underline-duration) ease;
+  transition: var(--appear-underline-duration) ease;
+  transition-property : background-size;
+}
+.underline-appear[data-anim="1"]{
+  background-size: 100% 5px;
+}
+/* << underline */
+
+
+/* << infinite-croll*/
+/* .infinite-scroll{ */
+[data-infinite-scroll="1"]{
+  /* --time-infinite-scroll:1500ms; */
+  white-space:nowrap;
+}
+/* .infinite-scroll > *{ */
+[data-infinite-scroll="1"] > *{
+  /* --time-infinite-scroll:1500ms; */
+  display:inline-block;
+
+  animation-name : anim-infinite-scroll;
+  animation-timing-function : ease;
+  animation-fill-mode:forwards;
+  /* animation-duration:var(--time-infinite-scroll); */
+  animation-delay:0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes anim-infinite-scroll{
+  0%{
+    transform:translateX(0%);
+  }
+  100% {
+    transform:translateX(-100%);
+  }
+}
+/* infinite-croll >> */
+
+/* << carousel */
+.mynt-lp-carousel{
+  /* position:relative; */
+  /* overflow:hidden; */
+  /* overflow-y: hidden;
+  overflow-x: auto; */
+  white-space:nowrap;
+  /* position:relative; */
+
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.mynt-lp-carousel > *[mynt-lp-carousel-selide]{
+  cursor:move;
+  scroll-snap-align: center;
+}
+.mynt-lp-carousel-navigation{
+  position:absolute;
+  left:50%;
+  /* bottom:10px; */
+  display:flex;
+  transform:translate(-50% , -200%);
+  /* transform:translateX(-50%);
+  transform:translateY(-200%); */
+  z-index:100;
+}
+.mynt-lp-carousel-navigation-point{
+  display:block;
+  width:10px;
+  height:10px;
+  margin:10px;
+  border-radius:50%;
+  border:1px solid var(--color-carousel-bg);
+  background-color:transparent;
+  box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+  cursor:pointer;
+  overflow:hidden;
+}
+.mynt-lp-carousel-navigation-point[data-active="1"]{
+  background-color:var(--color-carousel-bg);
+}
+.mynt-lp-carousel-navigation-point:hover{
+  opacity:0.5;
+}
+
+
+
+
+/* carousel >>*/
+
+/* << Button */
+
+.mynt-lp-carousel-button-l,
+.mynt-lp-carousel-button-r{
+  display:block;
+  position:absolute;
+  transform:translate(0,-50%);
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:rgb(60,60,60);
+  cursor:pointer;
+  box-shadow:2px 2px 4px rgba(0,0,0,0.7);
+}
+.mynt-lp-carousel-button-l:hover,
+.mynt-lp-carousel-button-r:hover{
+  /* opacity:0.5; */
+  background-color:rgba(255,0,0,0.7);
+}
+.mynt-lp-carousel-button-l:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  /* transform:translateX(50%); */
+  width: 0;
+  height: 0;
+  margin-top: -8px;
+  border: 8px solid transparent;        /*top right bottom を透明化 */
+  border-right: 8px solid #fff;
+}
+.mynt-lp-carousel-button-r:before{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  /* transform:translateX(50%); */
+  width: 0;
+  height: 0;
+  margin-top: -8px;
+  border: 8px solid transparent;        /*top right bottom を透明化 */
+  border-left: 8px solid #fff;
+}
+/* Button >> */
+
+
+.no-scroll-bar{
+  overflow:hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;/* Firefox 対応 */
+}
+.no-scroll-bar::-webkit-scrollbar {/* Chrome, Safari 対応 */
+  display:none;
+  /* background: red; */
+}

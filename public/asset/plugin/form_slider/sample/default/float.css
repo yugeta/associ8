@@ -1,0 +1,77 @@
+
+*,
+*:before,
+*:after{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+  /* font-family : var(--font);
+  color:var(--color-base-text); */
+}
+
+
+.sample-form{
+  border:1px solid black;
+  
+  
+  height:300px;
+  min-height:100px;
+
+  /* padding:10px; */
+  margin: 20px auto;
+  white-space: nowrap;
+}
+@media (max-width: 499px){
+  .sample-form{
+    width:300px;
+    min-width:90%;
+    max-width:100%;
+  }
+}
+@media (min-width: 500px){
+  .sample-form{
+    width:400px;
+    min-width:400px;
+    max-width:100%;
+  }
+}
+
+
+
+h1{
+  display:block;
+  font-size:24px;
+  margin-bottom:10px;
+  text-align:center;
+  margin:0 0 20px 0;
+  text-align:center;
+}
+
+.slider-footer{
+  margin-top:50px;
+}
+
+/* << Button */
+/* button[data-mode="next"]:after{
+  content:"NEXT >";
+}
+button[data-mode="prev"]:after{
+  content:"< PREV";
+} */
+/* Button >> */
+
+
+
+
+/* SP */
+@media (max-width: 499px) {
+  
+}
+
+
+/* PC */
+@media (min-width: 500px) {
+  
+}

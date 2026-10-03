@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="page/{{page_name}}/css/style.css">
+<script src="asset/plugin/form_slider/programs/form_slider.js"></script>
+<script type="module" src="page/{{page_name}}/js/main.js"></script>
+<!-- <script src="page/{{page_name}}/js/word.js"></script> -->
+<!-- <script src="page/{{page_name}}/js/uuid.js"></script> -->
+
+
+<input type="hidden" name="video_1" value="asset/mov/bg-s1.webm">
+<input type="hidden" name="video_2" value="asset/mov/bg-s1.m4v">
+<video class="bg" autoplay muted playsinline loop playsinline preload="metadata" poster="asset/mov/bg.jpg"></video>
+
+<div class="slider-wrap"></div>
+
+<div class="template">
+
+  <div data-template="slider-1">
+    <p class="title"><a href="./">Associ8</a></p>
+    <div class="explain document">あなたのボキャブラリーを計測します。
+基本キーワードを元にして、
+関連するキーワードを８個入力してください。</div>
+    <div class="buttons">
+      <button class="random" type="button" name="random">開始する</button>
+      <br>
+      <button class="history" type="button" name="history" data-mode="next" data-file="slider-4">入力履歴を見る</button>
+    </div>
+  </div>
+
+  <div data-template="slider-2">
+    <input class="word-input" data-key="input" type="text" name="word" value="">
+    <table class="word-table">
+      <tr>
+        <td class="word-1" data-num="1"></td>
+        <td class="word-2" data-num="2"></td>
+        <td class="word-3" data-num="3"></td>
+      </tr>
+      <tr>
+        <td class="word-4" data-num="4"></td>
+        <td class="word-0" data-num="0" data-active="1"></td>
+        <td class="word-6" data-num="5"></td>
+      </tr>
+      <tr>
+        <td class="word-7" data-num="6"></td>
+        <td class="word-8" data-num="7"></td>
+        <td class="word-9" data-num="8"></td>
+      </tr>
+    </table>
+    <div class="timer">00 m 00 s 00 ms</div>
+    <button class="back" type="button">タイトルへ戻る</button>
+  </div>
+
+  <div data-template="slider-3">
+    <p class="title">Word-Result</p>
+    <p class="area-title">入力結果</p>
+    <div class="word" data-num="0"></div>
+    <ul class="result">
+      <li class="word" data-num="1"></li>
+      <li class="word" data-num="2"></li>
+      <li class="word" data-num="3"></li>
+      <li class="word" data-num="4"></li>
+      <li class="word" data-num="5"></li>
+      <li class="word" data-num="6"></li>
+      <li class="word" data-num="7"></li>
+      <li class="word" data-num="8"></li>
+    </ul>
+    <div class="timer-area"><span class="timer-format"></span></div>
+    <div style="height:50px;"></div>
+    <button type="button" data-mode="prev" data-file="slider-1">タイトルへ戻る</button>
+  </div>
+
+  <div data-template="slider-4">
+    <p class="title">履歴</p>
+    <ul class="history"></ul>
+    <button type="button" data-mode="prev" data-file="slider-1">タイトルへ戻る</button>
+  </div>
+
+</div>
+

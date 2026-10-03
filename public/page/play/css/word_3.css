@@ -1,0 +1,41 @@
+.slider[data-file="slider-3"]{
+
+}
+
+.slider[data-file="slider-3"] ul,li{
+  list-style:none;
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+}
+
+.slider[data-file="slider-3"] .word[data-num="0"]{
+  padding:10px;
+  text-align:center;
+  font-size:1.5rem;
+  font-weight:bold;
+  border:1px solid black;
+  border-radius:4px;
+}
+
+.slider[data-file="slider-3"]  ul.result{
+  width:100%;
+  padding:20px;
+  display:block;
+  white-space:normal;
+  word-break:break-all;
+}
+.slider[data-file="slider-3"]  ul.result .word{
+  display:inline-block;
+  width:auto;
+  padding:10px;
+  margin:5px;
+  background-color:#ddd;
+  border-radius:4px;
+}
+.slider[data-file="slider-3"]  .timer-area{
+  text-align:center;
+  background-color:white;
+  padding:10px;
+}

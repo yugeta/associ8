@@ -1,0 +1,58 @@
+.slider[data-file="slider-4"]{
+
+}
+
+.slider[data-file="slider-4"] ul,li{
+  list-style:none;
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+  display:block;
+}
+
+.slider[data-file="slider-4"] ul.history{
+  width:100%;
+  text-align:center;
+}
+
+.slider[data-file="slider-4"] ul.history > li{
+  width:100%;
+  margin-bottom:20px;
+  border-bottom:1px solid #ccc;
+}
+.slider[data-file="slider-4"] ul.history > li .word-0{
+  display:inline-block;
+  background-color:red;
+  color:white;
+  padding:5px 10px;
+  margin:4px;
+  border-radius:4px;
+  vertical-align:middle;
+  text-align:center;
+}
+.slider[data-file="slider-4"] ul.history > li .entry{
+  /* display:inline-block; */
+  display:block;
+  font-size:10px;
+  margin-left:10px;
+  vertical-align:middle;
+  text-align:center;
+}
+.slider[data-file="slider-4"] ul.history > li .words{
+  display:block;
+  white-space:normal;
+  word-break:break-all;
+  text-align:center;
+}
+.slider[data-file="slider-4"] ul.history > li .words span{
+  display:inline-block;
+  background-color:blue;
+  color:white;
+  padding:5px 10px;
+  margin:4px;
+  border-radius:4px;
+}
+.slider[data-file="slider-4"] ul.history > li .words span:hover{
+  opacity:0.7;
+}

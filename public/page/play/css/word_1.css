@@ -1,0 +1,21 @@
+.slider[data-file="slider-1"]{
+
+}
+
+.slider[data-file="slider-1"] .buttons{
+  width:280px;
+  margin:10px auto;
+}
+
+.slider[data-file="slider-1"] .buttons > *{
+  width:100%;
+  margin-bottom:20px;
+}
+
+.slider[data-file="slider-1"] .explain{
+  width:280px;
+  margin:20px auto 50px;
+  border:1px solid #ddd;
+  padding:10px;
+  border-radius:4px;
+}
